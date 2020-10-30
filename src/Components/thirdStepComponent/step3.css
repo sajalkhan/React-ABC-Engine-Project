@@ -1,0 +1,107 @@
+@media print {
+  
+.container{
+  margin: auto;
+  max-width: 1000px;
+  min-width: 900px;
+}
+
+}
+
+a{
+  text-decoration: none;
+}
+.container{
+  margin: auto;
+  max-width: 1050px;
+  min-width: 900px;
+}
+
+.result-table {
+  align-items: flex-start;
+  margin-top: 10%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 95%;
+  margin: auto;
+  overflow: auto;
+}
+
+.table, th, td, caption{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    /* empty-cells: hide; */
+}
+
+table th,td{
+    height: 40px;
+    background: #EAFAF1;
+}
+caption{
+    height: 30px;
+    line-height: 2;
+    caption-side: top;
+    background: #CACFD2;
+}
+
+table tr:nth-child(even){
+  background: #EAEDED;
+}
+table tr:nth-child(odd){
+  background: #F2F3F4;
+}
+
+.btnBack {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.8rem;
+    font-weight: bold;
+    font-size: large;
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 30px;
+    background: #FF5733;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.btnBack:hover {
+  background: #FADBD8;
+}
+
+.print{
+  background: #CACFD2;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 10px;
+  height: 42px;
+  width: 42px;
+  float: right;
+  color: rgb(92, 88, 88);
+  text-align: center;
+  position: relative;
+  top: -180px;
+  right: 55px;
+  border-radius: 50%;
+}
+
+.print-tooltip{
+  display: none;
+}
+
+.print:hover .print-tooltip{
+  display: block;
+  color: black;
+  position: relative;
+  top: 8px;
+  font-size: small;
+}

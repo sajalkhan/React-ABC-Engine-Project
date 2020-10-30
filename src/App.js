@@ -1,6 +1,7 @@
 import React, { useState, createContext } from 'react'
 import StepOne from './Components/firstStepComponent/step1';
 import StepTwo from './Components/secondStepComponent/step2';
+import StepThree from './Components/thirdStepComponent/step3';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
@@ -16,10 +17,12 @@ const App = () => {
     max_x: '',
     min_x: '',
     max_y: '',
-    min_y: ''
+    min_y: '',
+    max_z: '',
+    min_z: '',
   });
 
-  const updateValue =(event)=> {
+  const updateValue = (event) => {
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
@@ -34,19 +37,18 @@ const App = () => {
 
     for (var i = 1; i < data.length; i++) {
 
-      if (max_x < data[i].data[1]) max_x = data[i].data[1];
-      if (max_y < data[i].data[2]) max_y = data[i].data[2];
-      if (max_z < data[i].data[3]) max_z = data[i].data[3];
-      if (min_x > data[i].data[1]) min_x = data[i].data[1];
-      if (min_y > data[i].data[2]) min_y = data[i].data[2];
-      if (min_z > data[i].data[3]) min_z = data[i].data[3];
+      if (parseFloat(max_x) < parseFloat(data[i].data[1])) max_x = data[i].data[1];
+      if (parseFloat(max_y) < parseFloat(data[i].data[2])) max_y = data[i].data[2];
+      if (parseFloat(max_z) < parseFloat(data[i].data[3])) max_z = data[i].data[3];
+      if (parseFloat(min_x) > parseFloat(data[i].data[1])) min_x = data[i].data[1];
+      if (parseFloat(min_y) > parseFloat(data[i].data[2])) min_y = data[i].data[2];
+      if (parseFloat(min_z) > parseFloat(data[i].data[3])) min_z = data[i].data[3];
     }
 
-    if(data.length)
-    {
-      setState({ ...state, max_x:max_x, min_x:min_x, max_y:max_y,min_y:min_y, max_z:max_z, min_z: min_z });
+    if (data.length) {
+      setState({ ...state, max_x: max_x, min_x: min_x, max_y: max_y, min_y: min_y, max_z: max_z, min_z: min_z });
     }
-    
+
     // console.log('mx_x ', max_x, ' mx_y ', max_y, ' mx_z ', max_z, ' mi_x ', min_x, ' mi_y ', min_y, ' mi_z ', min_z);
 
   }
@@ -57,11 +59,12 @@ const App = () => {
 
   return (
 
-    <Context.Provider value={{ ...state, updateValue: updateValue, handleOnFileLoad: handleOnFileLoad, handleOnError: handleOnError}}>
+    <Context.Provider value={{ ...state, updateValue: updateValue, handleOnFileLoad: handleOnFileLoad, handleOnError: handleOnError }}>
       <Router>
         <Switch>
           <Route exact path="/" component={StepOne} />
           <Route exact path="/step2" component={StepTwo} />
+          <Route exact path="/step3" component={StepThree} />
         </Switch>
       </Router>
     </Context.Provider>

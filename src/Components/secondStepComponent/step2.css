@@ -10,14 +10,14 @@
   align-items: center;
   margin: auto;
   width: 50vw;
-  height: 50vh;
+  height: 60vh;
   margin-top: 2%;
   border: 3px solid #F9E3D4;
   background: #FDF9F6;
 }
 
 .main .label {
-  flex-basis: 400px;
+  flex-basis: 350px;
 } 
 
 .label{
@@ -48,12 +48,21 @@
 }
 
 .form .fileUpload{
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .form .fileUpload_div{
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 2px;
+}
+
+.required {
+    width: 250px;
+    height: 23px;
+    border: 5px solid red;
+    border-radius: 5px;
+    background-color: #FFA07A;
+    font-size: 20px;
 }
 
 .main .btn {
