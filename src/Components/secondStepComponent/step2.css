@@ -1,0 +1,131 @@
+.container{
+  margin: auto;
+  max-width: 1100px;
+  min-width: 900px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 50vw;
+  height: 50vh;
+  margin-top: 2%;
+  border: 3px solid #F9E3D4;
+  background: #FDF9F6;
+}
+
+.main .label {
+  flex-basis: 400px;
+} 
+
+.label{
+  text-align: center;
+  font-size: 30px;
+  color: green;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.form input {
+    width: 250px;
+    height: 23px;
+    border: 1px solid orange;
+    border-radius: 5px;
+}
+
+.form input:focus {
+    width: 250px;
+    height: 23px;
+    border: 1px solid orange;
+    border-radius: 5px;
+    background-color: tan;
+    font-size: 20px;
+}
+
+.form .fileUpload{
+  margin-top: 50px;
+}
+
+.form .fileUpload_div{
+  margin-top: 50px;
+  margin-left: 2px;
+}
+
+.main .btn {
+    color: yellow;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(116,9,121,1) 45%, rgba(0,212,255,1) 100%);
+    top: 42%;
+    height: 31px;
+    position: relative;
+    right: -8%;
+    width: 102px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.8rem;
+    font-weight: bold;
+}
+
+.main .btn:hover {
+    cursor: pointer;
+    color: yellow;
+    background: rgb(34,195,158);
+    background: linear-gradient(0deg, rgba(34,195,158,1) 29%, rgba(253,187,45,1) 100%);
+    top: 42%;
+    height: 31px;
+    position: relative;
+    right: -8%;
+    width: 102px;
+    border-radius: 5px;
+}
+
+.main .btn-back {
+    color: yellow;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(116,9,121,1) 45%, rgba(0,212,255,1) 100%);
+    top: 42%;
+    height: 31px;
+    position: relative;
+    right: 88%;
+    width: 85px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.8rem;
+    font-weight: bold;
+}
+
+.main .btn-back:hover {
+    cursor: pointer;
+    color: yellow;
+    background: rgb(34,195,158);
+    background: linear-gradient(0deg, rgba(34,195,158,1) 29%, rgba(253,187,45,1) 100%);
+    top: 42%;
+    height: 31px;
+    position: relative;
+    right: 88%;
+    width: 85px;
+    border-radius: 5px;
+}
+
+/* .fileUpload{
+    top: 42%;
+    height: 31px;
+    position: relative;
+    width: 185px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.8rem;
+    font-weight: bold;
+} */
+
+button{
+  width: 100px;
+}
