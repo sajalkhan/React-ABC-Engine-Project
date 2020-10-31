@@ -20,6 +20,7 @@ const App = () => {
     min_y: '',
     max_z: '',
     min_z: '',
+    chart: []
   });
 
   const updateValue = (event) => {
@@ -34,9 +35,10 @@ const App = () => {
     var min_y = 99999999999999;
     var max_z = -999999999999;
     var min_z = 99999999999999;
+    var chartData = [];
 
     for (var i = 1; i < data.length; i++) {
-
+      chartData.push({x_axis:data[i].data[0], y_axis:data[i].data[1], x: data[i].data[1], y: data[i].data[2], z: data[i].data[3]});
       if (parseFloat(max_x) < parseFloat(data[i].data[1])) max_x = data[i].data[1];
       if (parseFloat(max_y) < parseFloat(data[i].data[2])) max_y = data[i].data[2];
       if (parseFloat(max_z) < parseFloat(data[i].data[3])) max_z = data[i].data[3];
@@ -46,9 +48,9 @@ const App = () => {
     }
 
     if (data.length) {
-      setState({ ...state, max_x: max_x, min_x: min_x, max_y: max_y, min_y: min_y, max_z: max_z, min_z: min_z });
+      setState({ ...state, max_x: max_x, min_x: min_x, max_y: max_y, min_y: min_y, max_z: max_z, min_z: min_z, chart: {chartData} });
     }
-
+    
     // console.log('mx_x ', max_x, ' mx_y ', max_y, ' mx_z ', max_z, ' mi_x ', min_x, ' mi_y ', min_y, ' mi_z ', min_z);
 
   }

@@ -1,10 +1,9 @@
-import React,{ useRef } from 'react';
+import React,{ useRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
 import { Context } from '../../App';
-
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './step3.css';
-
 class StepThree extends React.Component {
 
     render() {
@@ -59,11 +58,43 @@ const PrintDocument = () => {
         content: () => componentRef.current,
     });
 
+    const appContext = useContext(Context);
+    const chart = Object.entries(appContext.chart);
+    const dataX = chart[0];
+    var chartData = [];
+
+    (dataX) ? chartData = dataX[1] : chartData = [];
+
     return (
         <div className="container">
             <StepThree ref={componentRef} />
             <Link to="/step2" className="btnBack"> Back </Link>
             <span onClick={handlePrint} className="print fas fa-print fa-2x"><i className="print-tooltip">print</i></span>
+            {
+                chartData.length? 
+                    <div>
+                        <br/><br/>
+                        {/*----------- https://recharts.org/en-US/examples -----*/}
+                        <LineChart
+                            width={1000}
+                            height={500}
+                            data={chartData}
+                            margin={{
+                                top: 5, right: 30, left: 20, bottom: 5,
+                            }}
+                        >
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="x_axis" />
+                            <YAxis dataKey="y_axis" />
+                            <Tooltip />
+                            <Legend />
+                            <Line type="monotone" dataKey="x" stroke="#8884d8" strokeDasharray="5 5"/>
+                            <Line type="monotone" dataKey="y" stroke="green" strokeDasharray="3 4 5 2" />
+                            <Line type="monotone" dataKey="z" stroke="red" strokeDasharray="3 5"/>
+                        </LineChart>
+                    </div>: ''
+            }
+
         </div>
     );
 };
