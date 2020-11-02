@@ -24,6 +24,10 @@ const App = () => {
   });
 
   const updateValue = (event) => {
+    if ((event.target.name === 'max_x') || (event.target.name === 'min_x') || (event.target.name === 'max_y') || (event.target.name === 'min_y') || (event.target.name === 'max_z') || (event.target.name === 'min_z'))
+    {
+      if(typeof event.target.name !== 'number') return;
+    }
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
